@@ -155,7 +155,6 @@ group :development do
   gem 'bond'
   gem 'jist'
   gem 'pry-rails'
-  gem 'pry-theme'
 
   gem 'pry-pretty-numeric'
   gem 'pry-syntax-hacks'
@@ -166,10 +165,6 @@ group :development do
   gem 'pry-remote'
 
   gem 'rspec-console'
-
-  # Start a pry session whenever something goes wrong.
-  # Не испольуем потому что есть better_errors
-  #gem 'pry-rescue'
 
   # step, next, finish, continue, break
   gem 'pry-nav'
@@ -185,7 +180,6 @@ group :development do
   gem "hpricot", ">= 0.8.6"
   gem "ruby_parser", ">= 2.3.1"
 
-  gem "better_errors"
   gem "binding_of_caller"
 
   # Поддержка для rails_panel в chrome

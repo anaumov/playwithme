@@ -123,9 +123,6 @@ GEM
       descendants_tracker (~> 0.0.1)
       ice_nine (~> 0.9)
     bcrypt-ruby (3.1.2)
-    better_errors (0.9.0)
-      coderay (>= 1.0.0)
-      erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bond (0.4.3)
@@ -406,8 +403,6 @@ GEM
       pry (>= 0.9.11)
     pry-syntax-hacks (0.0.6)
       pry (>= 0.9.8)
-    pry-theme (0.2.0)
-      json
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
@@ -594,7 +589,6 @@ DEPENDENCIES
   airbrake!
   authority
   awesome_print
-  better_errors
   binding_of_caller
   bond
   bootstrap-sass (~> 3.0.2.0)
@@ -654,7 +648,6 @@ DEPENDENCIES
   pry-remote
   pry-stack_explorer
   pry-syntax-hacks
-  pry-theme
   quiet_assets
   rails (~> 4.0.0)
   rails-erd
