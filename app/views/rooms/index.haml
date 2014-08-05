@@ -1,0 +1,24 @@
+.page-header
+  %h1= t('.rooms')
+
+= render "form", room: Room.new(user_id: current_user.id) if current_user
+
+- if @rooms.present?
+  %br/
+  %br/
+  %table.table.table-stripped.table-hover
+    %thead
+      %tr
+        %th= t('.thead.email')
+        %th{width: 20}
+        %th{width: 10}
+        %th{width: 10}
+    %tbody
+      - @rooms.each do |room|
+        %tr
+          %td= room.email
+          %td= link_to 'Edit',    edit_room_path(room),
+                                  :class => 'btn btn-primary btn-small'
+          %td= link_to 'Destroy', room_path(room),
+                                  method: :delete, data: { confirm: 'Are you sure?' },
+                                  :class => 'btn btn-danger btn-small'

@@ -13,6 +13,7 @@ Rails4Template::Application.routes.draw do
   root 'welcome#index'
 
   resources :users
+  resources :rooms
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
