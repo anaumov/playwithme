@@ -1,0 +1,7 @@
+%h2 Пользователь ##{@user.id}
+%p 
+  %strong Электронная почта:
+  = @user.email
+%p
+  = link_to 'Edit', edit_admin_ad_path(@ad), class: 'btn btn-primary btn-small'
+  = link_to 'Destroy', admin_ad_path(@ad), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-small'

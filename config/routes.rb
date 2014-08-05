@@ -1,4 +1,5 @@
 Rails4Template::Application.routes.draw do
+  devise_for :users
   self.default_url_options Settings.app.default_url_options.symbolize_keys
 
   ## scope subdomain: 'api', constraints: { subdomain: 'api' } do
@@ -11,6 +12,7 @@ Rails4Template::Application.routes.draw do
 
   root 'welcome#index'
 
+  resources :users
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

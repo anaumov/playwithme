@@ -21,6 +21,7 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 # Авторизация и аутентификация
 gem 'authority'
 # gem 'rolify'
+gem 'devise'
 
 # Модели, value object и form objects
 # gem 'phony_rails', :git => 'git://github.com/joost/phony_rails.git'
