@@ -5,7 +5,7 @@ Rails4Template::Application.routes.draw do
   ## scope subdomain: 'api', constraints: { subdomain: 'api' } do
   #mount GrapeSwaggerRails::Engine => '/api'
   #mount API => '/api'
- 
+
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   ActiveAdmin.routes(self)
@@ -14,6 +14,8 @@ Rails4Template::Application.routes.draw do
 
   resources :users
   resources :rooms
+
+  get 'my' => 'profile#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
