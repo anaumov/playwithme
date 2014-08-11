@@ -16,7 +16,7 @@
     %tbody
       - @rooms.each do |room|
         %tr
-          %td= room.email
+          %td= room.title
           %td= link_to 'Edit',    edit_room_path(room),
                                   :class => 'btn btn-primary btn-small'
           %td= link_to 'Destroy', room_path(room),
