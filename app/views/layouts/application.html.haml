@@ -14,7 +14,18 @@
       .container
         .content
           .row
-            .col-md-12
+            .col-md-4
+              logo
+            .col-md-8
+              %h1 Заголок страницы
+          .row
+            .col-md-4
+              %ul.nav.nav-pills.nav-stacked
+                %li Старт
+                %li Создать студию
+                %li Студии
+                %li ...
+            .col-md-8
               = render 'layouts/messages'
               = yield
       %footer.footer
