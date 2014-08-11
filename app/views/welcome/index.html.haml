@@ -1,2 +1,4 @@
-%h1 Welcome#index
-%p Find me in app/views/welcome/index.html.haml
+- if current_user
+	= redirect_to profiles_path
+- else
+	= link_to "Sign in", new_user_session_path, class: 'btn btn-success' 
