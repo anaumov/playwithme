@@ -1,4 +1,8 @@
-- if current_user
-	= redirect_to profiles_path
-- else
-	= link_to "Sign in", new_user_session_path, class: 'btn btn-success' 
+%h3 You are not logged in, you can
+%br/
+%p produce the input using their credentials
+= link_to "Sign in", new_user_session_path, class: 'btn btn-success'
+%br/
+%hr/
+%p or to register, if you're new to this resource
+= link_to "Sign up", new_user_registration_path, class: 'btn btn-primary'

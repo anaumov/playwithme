@@ -14,9 +14,8 @@ Rails4Template::Application.routes.draw do
 
   resources :users
   resources :rooms
-  resources :profiles
 
-  get 'my' => 'profiles#index'
+  get 'my' => 'profile#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
