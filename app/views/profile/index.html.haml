@@ -1,0 +1,4 @@
+%h3= current_user.email
+%h3 Welcome to PlayWithMe, this is test profile page
+%br
+= link_to "Sign out", destroy_user_session_path, :method => :delete, class: 'btn btn-danger'
