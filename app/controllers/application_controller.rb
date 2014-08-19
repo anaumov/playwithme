@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
     my_path(current_user)
   end
 
+  def after_sign_up_path_for(user)
+    confirm_account_path
+  end
+
 end

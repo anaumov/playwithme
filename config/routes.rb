@@ -16,6 +16,7 @@ Rails4Template::Application.routes.draw do
   resources :rooms
 
   get 'my' => 'profile#index'
+  get 'confirm_account' => 'users#confirm_account'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
