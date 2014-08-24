@@ -1,4 +1,15 @@
-%h3= current_user.email
-%h3 Welcome to PlayWithMe, this is test profile page
-%br
-= link_to "Sign out", destroy_user_session_path, :method => :delete, class: 'btn btn-danger'
+%h1 Личный кабинет
+%h3
+  Добро пожаловать,
+  = current_user.login
+%p
+  = link_to "Создать студию", '#'
+%p
+  = link_to "Все студии", '#'
+%p
+  = link_to "Сообщения", '#'
+%p
+  = link_to "Приглашения", '#'
+%p
+  = link_to "Настройки аккаунта", '#'
+= link_to "Выйти", destroy_user_session_path, :method => :delete, class: 'btn btn-danger'
