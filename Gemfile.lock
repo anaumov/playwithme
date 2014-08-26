@@ -232,6 +232,8 @@ GEM
     formatador (0.2.4)
     formtastic (2.3.0.rc2)
       actionpack (>= 3.0)
+    friendly_id (5.0.4)
+      activerecord (>= 4.0.0)
     fssm (0.2.10)
     gherkin (2.12.0)
       multi_json (~> 1.3)
@@ -609,6 +611,7 @@ DEPENDENCIES
   factory_girl_rails
   fakeredis
   foreman
+  friendly_id (~> 5.0.0)
   grape!
   grape-cors!
   grape-swagger-rails
