@@ -119,6 +119,13 @@ gem 'uglifier', '~> 1.3'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', github: 'rails/coffee-rails'
 
+=begin
+  FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord.
+  It allows you to create pretty URL’s and work with human-friendly strings as if they were
+  numeric ids for ActiveRecord models.
+=end
+gem 'friendly_id', '~> 5.0.0'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -228,12 +235,12 @@ group :test do
 
   gem 'simplecov', :require => false
   gem 'simplecov-rcov', :require => false
-  
+
   gem "database_cleaner"
   gem "capybara"
   gem 'capybara-screenshot'
   gem 'poltergeist'
-  
+
   gem "launchy", ">= 2.1.2"
   gem 'turn', :require => false
   #gem "test_active_admin", :git => "git://github.com/BrandyMint/test_active_admin.git"
