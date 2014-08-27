@@ -228,12 +228,12 @@ group :test do
 
   gem 'simplecov', :require => false
   gem 'simplecov-rcov', :require => false
-  
+
   gem "database_cleaner"
   gem "capybara"
   gem 'capybara-screenshot'
   gem 'poltergeist'
-  
+
   gem "launchy", ">= 2.1.2"
   gem 'turn', :require => false
   #gem "test_active_admin", :git => "git://github.com/BrandyMint/test_active_admin.git"
