@@ -10,7 +10,4 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }
   validates :password, confirmation: true
 
-  extend FriendlyId
-  friendly_id :login, use: :slugged
-
 end

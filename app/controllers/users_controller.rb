@@ -1,7 +1,7 @@
 class UsersController < InheritedResources::Base
 
   def show
-    @user = User.friendly.find(params[:id])
+    @user = User.find_by_login(params[:login])
   end
 
 end
