@@ -10,4 +10,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }
   validates :password, confirmation: true
 
+  has_many  :jams
+  has_and_belongs_to_many :jams, join_table: :jams_users
+
 end
