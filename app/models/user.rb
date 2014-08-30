@@ -10,4 +10,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }
   validates :password, confirmation: true
 
+  has_many  :own_jams, class_name: "Jam", foreign_key: "owner_id"
+  has_and_belongs_to_many :jams, join_table: :jams_users
+
 end
