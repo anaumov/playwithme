@@ -3,13 +3,31 @@
   Добро пожаловать,
   = @user.login
 %p
-  = link_to "Создать студию", '#'
-%p
-  = link_to "Все студии", '#'
-%p
-  = link_to "Сообщения", '#'
-%p
-  = link_to "Приглашения", '#'
-%p
-  = link_to "Настройки аккаунта", '#'
+  = link_to "Создать джем", new_jam_path
+
+-if @user.income_invites.empty?
+  %p У вас пока нет входящих приглашений
+-else
+  %h5 Входящие приглашения
+  %table.table.table-stripped.table-hover
+    %thead
+      %tr
+        %th Джем
+        %th Статус приглашения
+        %th Отправитель
+        %th Автор джема
+        %th{width: 10}
+        %th{width: 10}
+        %th{width: 10}
+        %th{width: 10}
+    %tbody
+      - @user.income_invites.each do |invite|
+        %tr
+          %td= invite.jam.title
+          %td= invite.state
+          %td= link_to invite.sender.login, user_page_path(login: invite.sender.login)
+          %td= link_to invite.jam.owner.login, user_page_path(login: invite.jam.owner.login)
+
+%p= link_to "К списку всех джемов", jams_path
+
 = link_to "Выйти", destroy_user_session_path, :method => :delete, class: 'btn btn-danger'

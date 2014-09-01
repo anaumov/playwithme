@@ -12,7 +12,9 @@ Rails4Template::Application.routes.draw do
 
   root 'welcome#index'
 
-  resources :jams
+  resources :jams do
+    post 'invite'
+  end
 
   get 'my'     => 'profile#index'
   get 'users'  => 'users#index'
