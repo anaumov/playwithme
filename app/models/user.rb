@@ -13,4 +13,7 @@ class User < ActiveRecord::Base
   has_many  :own_jams, class_name: "Jam", foreign_key: "owner_id"
   has_and_belongs_to_many :jams, join_table: :jams_users
 
+  has_many :income_invites, class_name: "Invite", foreign_key: "receiver_id"
+  has_many :outcome_invites, class_name: "Invite", foreign_key: "sender_id"
+
 end
