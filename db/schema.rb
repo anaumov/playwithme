@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140830163047) do
+ActiveRecord::Schema.define(version: 20140901042515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,11 +60,11 @@ ActiveRecord::Schema.define(version: 20140830163047) do
   add_index "jams", ["owner_id"], name: "index_jams_on_owner_id", using: :btree
 
   create_table "jams_users", id: false, force: true do |t|
-    t.integer "jams_id"
-    t.integer "users_id"
+    t.integer "jam_id"
+    t.integer "user_id"
   end
 
-  add_index "jams_users", ["jams_id", "users_id"], name: "index_jams_users_on_jams_id_and_users_id", using: :btree
+  add_index "jams_users", ["jam_id", "user_id"], name: "index_jams_users_on_jam_id_and_user_id", using: :btree
 
   create_table "rooms", force: true do |t|
     t.integer  "user_id"
