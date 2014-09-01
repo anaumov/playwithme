@@ -1,0 +1,6 @@
+%h2= @jam.title
+%h4= @jam.owner.login
+
+%ul
+  - @jam.users.each do |user|
+    %li= link_to user.login, user_page_path(user)

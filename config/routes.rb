@@ -12,12 +12,13 @@ Rails4Template::Application.routes.draw do
 
   root 'welcome#index'
 
+  resources :jams
+
   get 'my'     => 'profile#index'
   get 'users'  => 'users#index'
   get ':login' => 'users#show', as: :user_page
 
   resources :users
-  resources :rooms
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

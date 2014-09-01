@@ -1,0 +1,19 @@
+.page-header
+  %h1 Все джемы
+
+-# TODO authorize
+= link_to 'New jam', new_jam_path
+
+- if @jams.any?
+  %table.table.table-stripped.table-hover
+    %thead
+      %tr
+        %th Название
+        %th Создатель
+        %th{width: 10}
+        %th{width: 10}
+    %tbody
+      - @jams.each do |jam|
+        %tr
+          %td= link_to jam.title, jam_path(jam)
+          %td= link_to jam.owner.login, user_page_path(login: jam.owner.login)
