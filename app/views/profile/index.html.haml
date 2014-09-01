@@ -24,7 +24,10 @@
       - @user.income_invites.each do |invite|
         %tr
           %td= invite.jam.title
-          %td= invite.state
+          %td
+            %p= invite.state
+            %p= link_to "Принять", invite_approve_path(invite), :method => :put
+            %p= link_to "Отклонить", invite_reject_path(invite), :method => :put
           %td= link_to invite.sender.login, user_page_path(login: invite.sender.login)
           %td= link_to invite.jam.owner.login, user_page_path(login: invite.jam.owner.login)
 
