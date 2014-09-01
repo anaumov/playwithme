@@ -1,5 +1,7 @@
 %h2= @jam.title
 %h4= @jam.owner.login
+%p= link_to "Редактировать", edit_jam_path(@jam) if current_user.can_update?(@jam)
+%p= link_to "Удалить", jam_path(@jam), method: :delete, data: { confirm: "Вы уверены, что хотите удалить?" } if current_user.can_delete?(@jam)
 
 -if @jam.invites.empty?
   %p Для этого джема пока нет приглашений
@@ -24,8 +26,10 @@
   - @jam.users.each do |user|
     %li= link_to user.login, user_page_path(user)
 
-= form_tag jam_invite_path(@jam), {}  do
-  = select_tag "receivers_ids[]", options_for_select(User.all.collect{|user| [user.login, user.id]}), {multiple: :multiple}
-  %br
-  %br
-  = submit_tag "Пригласить"
+- if current_user.can_invite?(@jam)
+
+  = form_tag jam_invite_path(@jam), {}  do
+    = select_tag "receivers_ids[]", options_for_select(User.all.collect{|user| [user.login, user.id]}), {multiple: :multiple}
+    %br
+    %br
+    = submit_tag "Пригласить"
