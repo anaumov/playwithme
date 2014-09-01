@@ -7,7 +7,7 @@ class Invite < ActiveRecord::Base
 
   state_machine :state, initial: :new do
     state :new
-    state :accepted
+    state :approved
     state :rejected
   end
 end
