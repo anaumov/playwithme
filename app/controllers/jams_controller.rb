@@ -9,7 +9,7 @@ class JamsController < InheritedResources::Base
   def invite
     params[:receivers_ids].each do |receiver_id|
       current_user.outcome_invites.create(jam_id: params[:jam_id], receiver_id: receiver_id)
-  end
+    end
 
     redirect_to jam_path(params[:jam_id])
   end

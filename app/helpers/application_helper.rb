@@ -25,4 +25,8 @@ module ApplicationHelper
     content_tag :span, count, options
   end
 
+  def user_page user
+    user_page_path(login: user.login)
+  end
+
 end
