@@ -9,5 +9,13 @@ class Invite < ActiveRecord::Base
     state :new
     state :accepted
     state :rejected
+
+    event :accept do
+      transition :new => :accepted
+    end
+
+    event :reject do
+      transition :new => :rejected
+    end
   end
 end

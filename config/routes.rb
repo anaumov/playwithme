@@ -16,6 +16,11 @@ Rails4Template::Application.routes.draw do
     post 'invite'
   end
 
+  resources :invites do
+    put 'accept'
+    put 'reject'
+  end
+
   get 'my'     => 'profile#index'
   get 'users'  => 'users#index'
   get ':login' => 'users#show', as: :user_page

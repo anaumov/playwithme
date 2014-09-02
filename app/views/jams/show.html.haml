@@ -16,7 +16,7 @@
       - @jam.invites.each do |invite|
         %tr
           %td= invite.state
-          %td= link_to invite.receiver.login, user_page_path(login: invite.receiver.login)
+          %td= link_to invite.receiver.login, user_page(invite.receiver)
 
 %p= link_to "К списку всех джемов", jams_path
 

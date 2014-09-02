@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
     my_path
   end
 
+  def user_page user
+    user_page_path(login: user.login)
+  end
+
   protected
 
     def configure_permitted_parameters
