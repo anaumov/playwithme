@@ -1,4 +1,5 @@
 class Invite < ActiveRecord::Base
+
   validates :sender, :receiver, :jam, presence: true
 
   belongs_to :sender, class_name: "User"

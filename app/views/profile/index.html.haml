@@ -14,9 +14,7 @@
       %tr
         %th Джем
         %th Статус приглашения
-        %th Отправитель
         %th Автор джема
-        %th{width: 10}
         %th{width: 10}
         %th{width: 10}
         %th{width: 10}
@@ -29,7 +27,8 @@
             - if invite.new?
               %p= link_to "Принять", invite_accept_path(invite), :method => :put
               %p= link_to "Отклонить", invite_reject_path(invite), :method => :put
-          %td= link_to invite.sender.login, user_page(invite.sender)
+            - elsif invite.accepted?
+              %p= link_to "Запись джема", jam_path(invite.jam)
           %td= link_to invite.jam.owner.login, user_page(invite.jam.owner)
 
 %p= link_to "К списку всех джемов", jams_path
