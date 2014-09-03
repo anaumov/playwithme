@@ -4,7 +4,3 @@
   = @user.email
 %p
   = link_to 'К списку всех пользователей', users_path
-- if admin_user_signed_in?
-  %p
-    = link_to 'Edit', edit_admin_ad_path(@ad), class: 'btn btn-primary btn-small'
-    = link_to 'Destroy', admin_ad_path(@ad), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-small'
