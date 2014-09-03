@@ -27,8 +27,6 @@ Rails4Template::Application.routes.draw do
   get 'users' => 'users#index'
   get ':login' => 'users#show', as: :user_page
 
-  resources :users
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
