@@ -21,8 +21,10 @@ Rails4Template::Application.routes.draw do
     put 'reject'
   end
 
-  get 'my'     => 'profile#index'
-  get 'users'  => 'users#index'
+  get 'my' => 'profile#index'
+  get 'my/settings' => 'profile#settings'
+  put 'my/update' => 'profile#update'
+  get 'users' => 'users#index'
   get ':login' => 'users#show', as: :user_page
 
   resources :users
