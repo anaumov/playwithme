@@ -2,6 +2,7 @@
 %h3
   Добро пожаловать,
   = @user.login
+= image_tag(@user.avatar.thumb.url)
 %p
   = link_to "Создать джем", new_jam_path
 
