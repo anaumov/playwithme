@@ -7,6 +7,11 @@ class JamsController < InheritedResources::Base
     @jam = current_user.own_jams.new
   end
 
+  def show
+    @unaccepted_invite = current_user.unaccepted_invite_for(@jam)
+    super
+  end
+
   def edit
     authorize_action_for(@jam)
   end

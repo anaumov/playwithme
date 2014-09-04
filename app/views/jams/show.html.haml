@@ -19,6 +19,9 @@
         %tr
           %td= invite.state
           %td= link_to invite.receiver.login, user_page(invite.receiver)
+      - if @unaccepted_invite
+        %p У Вас есть непринятое приглашение для этого джема
+        %p= link_to "Принять приглашение", invite_accept_path(@unaccepted_invite), :method => :put
 
 %p= link_to "К списку всех джемов", jams_path
 
