@@ -6,6 +6,8 @@ class Invite < ActiveRecord::Base
   belongs_to :receiver, class_name: "User"
   belongs_to :jam, class_name: "Jam"
 
+  scope :user_new_invite_in_jam, ->(jam, user) { where(jam_id: jam.id, receiver_id: user.id, state: "new") }
+
   state_machine :state, initial: :new do
     state :new
     state :accepted

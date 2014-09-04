@@ -17,4 +17,8 @@ class User < ActiveRecord::Base
   has_many :income_invites, class_name: "Invite", foreign_key: "receiver_id"
   has_many :outcome_invites, class_name: "Invite", foreign_key: "sender_id"
 
+  def unaccepted_invite_for jam
+    Invite.user_new_invite_in_jam(jam, self).last
+  end
+
 end
