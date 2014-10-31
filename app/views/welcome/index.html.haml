@@ -1,11 +1,13 @@
-%h3 You are not logged in, you can
-%br/
-%p produce the input using their credentials
-= link_to "Sign in", new_user_session_path, class: 'btn btn-success'
-%br/
-%hr/
-%p or to register, if you're new to this resource
-= link_to "Sign up", new_user_registration_path, class: 'btn btn-primary'
-%br/
-%hr/
-= link_to "Forgot your password?", new_user_password_path
+.welcome
+  .row.action-container
+    .col-lg-12
+      = image_tag "guitar-welcome.svg", :class => 'guitar-welcome'
+      %h1 Jam With Your Band Online
+
+      %p #{link_to "Sign up for free", new_user_registration_path, class: 'btn btn-success btn-lg'}
+      %p 
+        Already a member?
+        %br 
+        = link_to "Sign in", new_user_session_path
+        \/
+        = link_to "Recover password", new_user_password_path
